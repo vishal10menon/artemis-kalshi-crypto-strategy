@@ -102,6 +102,14 @@ python src/market_scanner.py
 
 ## Backtest Results
 
+### Example Output
+
+```text
+Markets Tested: 42
+Win Rate: 57.3%
+Average Edge: 6.1%
+Average Return per Trade: 1.8%
+```
 The backtest runs across multiple sample markets using historical Kalshi price data.
 
 Results are generated in:
