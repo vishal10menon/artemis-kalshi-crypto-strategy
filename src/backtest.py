@@ -1,4 +1,5 @@
 from strategy import generate_signal, calculate_edge
+import matplotlib.pyplot as plt
 from market_data import get_kalshi_probability
 from fair_value import get_fair_probability
 
@@ -9,6 +10,7 @@ markets = [
 ]
 
 results = []
+equity = [100]
 
 for ticker in markets:
     try:
@@ -17,6 +19,16 @@ for ticker in markets:
         signal = generate_signal(fair, kalshi)
         edge = calculate_edge(fair, kalshi)
 
+        # simple pseudo-PnL model (MUST be inside loop)
+        if signal == 1:
+            pnl = edge * 10
+        elif signal == -1:
+            pnl = -edge * 10
+        else:
+            pnl = 0
+
+        equity.append(equity[-1] + pnl)
+
         results.append({
             "ticker": ticker,
             "fair": fair,
@@ -24,6 +36,7 @@ for ticker in markets:
             "edge": edge,
             "signal": signal,
         })
+
     except Exception as e:
         results.append({
             "ticker": ticker,
@@ -32,3 +45,14 @@ for ticker in markets:
 
 for r in results:
     print(r)
+
+# plot equity curve AFTER loop finishes
+plt.figure()
+plt.plot(equity)
+plt.title("Strategy Equity Curve")
+plt.xlabel("Trades")
+plt.ylabel("Portfolio Value")
+plt.grid(True)
+
+plt.savefig("assets/equity_curve.png")
+plt.show()
