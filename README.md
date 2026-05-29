@@ -44,7 +44,7 @@ artemis-kalshi-crypto-strategy/
 │   ├── fair_value.py        # Fair probability model with documentation
 │   ├── market_data.py       # Kalshi Trade API v2 data fetch
 │   ├── backtest.py          # Multi-market backtest and results
-│   └── find_markets.py      # Open market discovery tool
+│   └── market_scanner.py      # Open market discovery and filtering
 │
 ├── reports/
 │   └── research_report.pdf
@@ -95,7 +95,7 @@ python src/backtest.py
 ### Discover open Kalshi markets
 
 ```bash
-python src/find_markets.py
+python src/market_scanner.py
 ```
 
 ---
