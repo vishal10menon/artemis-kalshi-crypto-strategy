@@ -1,21 +1,13 @@
-# Artemis Kalshi Fed Decision Calibration Strategy
+# Artemis Kalshi Event Contract Strategy
 
-## Strategy thesis
-Kalshi Fed decision markets may lag changes in institutional rate expectations during high-volatility macro weeks, especially around CPI, NFP, and FOMC events.
+**Track:** Kalshi Prediction Markets  
+**Competition:** Artemis Quant Competition 2026  
+**Deadline:** June 1, 2026
 
-## Market universe
-Kalshi Fed rate decision contracts.
+## Strategy Overview
 
-## Fair value model
-Use CME FedWatch probabilities, FRED macro data, and event-date features to estimate fair probabilities for Kalshi outcomes.
+This project implements a systematic trading strategy for Kalshi event contracts. The core idea is a simple mean-reversion fair value model that compares an estimated probability against live Kalshi market prices. Positions are taken only when the gap between the model and the market exceeds a 5% threshold after basic liquidity filters.
 
-## Signal
-Enter when model-implied fair probability differs from Kalshi mid-price by more than a threshold after spread and liquidity filters.
+The current implementation uses a placeholder fair value model (constant 0.62) because live crypto-related Kalshi markets were unavailable during development. The pipeline is designed to work with any Kalshi event contract.
 
-## Risk management
-Position sizing based on confidence, liquidity, spread width, and event correlation.
-
-## Deliverables
-- Research report
-- Reproducible code
-- Pitch deck
+## Repository Structure
