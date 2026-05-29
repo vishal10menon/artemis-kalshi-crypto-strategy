@@ -65,7 +65,7 @@ artemis-kalshi-crypto-strategy/
 ## Installation
 
 ```bash
-pip install requests
+pip install -r requirements.txt
 ```
 
 No additional dependencies are required beyond the Python `requests` package.
