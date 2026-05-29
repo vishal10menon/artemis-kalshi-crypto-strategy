@@ -1,6 +1,7 @@
 import sys
 
 from market_data import get_kalshi_probability
+from fair_value import get_fair_probability
 
 
 def calculate_edge(fair_probability: float, kalshi_probability: float) -> float:
@@ -30,14 +31,13 @@ def generate_signal(
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
+    if len(sys.argv) < 2:
         raise SystemExit(
-            "Usage: python src/strategy.py <KALSHI_MARKET_TICKER> <FAIR_PROBABILITY>"
+            "Usage: python src/strategy.py <KALSHI_MARKET_TICKER>"
         )
 
     ticker = sys.argv[1]
-    fair_probability = float(sys.argv[2])
-
+    fair_probability = get_fair_probability(ticker)
     kalshi_probability = get_kalshi_probability(ticker)
     signal = generate_signal(fair_probability, kalshi_probability)
     edge = calculate_edge(fair_probability, kalshi_probability)
