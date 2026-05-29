@@ -42,3 +42,13 @@ python src/backtest.py
 
 # Discover current open Kalshi markets
 python src/find_markets.py
+## Deliverables
+
+- Research Report: reports/research_report.pdf
+
+- Reproducible Code: this GitHub repository
+
+- Pitch Deck: slides/pitch_deck.pdf (also shared via Google Slides with lindsey@artemisanalytics.xyz)
+
+## Limitations and Critical Evaluation
+The fair value model remains a simple, uncalibrated rule. No external data sources (CME FedWatch, FRED, or macro releases) were incorporated. The backtest shows limited variation across markets due to the static nature of the current model. Edge decay is expected as market efficiency improves. Full discussion of limitations is provided in the research report.
