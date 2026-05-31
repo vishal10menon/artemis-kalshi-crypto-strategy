@@ -10,7 +10,7 @@
 
 This project presents a systematic trading strategy for Kalshi event contracts focused on crypto price milestone markets. The strategy uses a simple mean-reversion fair value model to identify mispricings between the model probability and live Kalshi market prices. Trades are executed only when the absolute edge exceeds a 5% threshold after applying liquidity filters.
 
-The fair value model applies a base probability of `0.50` with a fixed `±0.12` adjustment based on whether the Kalshi price is above or below `0.50`. This creates a conservative mean-reversion bias. The model is intentionally simple due to the unavailability of live crypto Kalshi markets during development.
+The fair value model (v1.1) applies a base probability of 0.50 with a fixed ±0.12 adjustment based on whether the Kalshi price is above or below `0.50`. This creates a conservative mean-reversion bias. The model is intentionally simple due to the unavailability of live crypto Kalshi markets during development.
 
 The core idea is to treat Kalshi prices as noisy observations of true event probabilities and exploit temporary deviations through disciplined mean reversion. The approach prioritizes robustness over complexity and avoids overfitting to historical patterns that may not persist in prediction markets.
 
