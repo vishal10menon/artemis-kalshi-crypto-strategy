@@ -1,2 +1,11 @@
 __pycache__/
 *.pyc
+.env
+venv/
+.env.local
+.DS_Store
+.ipynb_checkpoints/
+.idea/
+.vscode/
+*.pem
+*.key
